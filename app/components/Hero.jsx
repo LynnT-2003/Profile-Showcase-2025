@@ -105,7 +105,6 @@ const HeroSection = () => {
             ref={nextVideoRef}
             src={getVideoSrc(currentIndex)}
             loop
-            autoPlay
             muted
             id="next-video"
             className="absolute-center invisible absolute size-64 z-20 object-cover object-center"

@@ -3,27 +3,40 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
-// import AnimatedTitle from "./AnimatedTitle";
-
 const About = () => {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
-    const clipAnimation = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#clip",
-        start: "center center",
-        end: "+=800 center",
-        scrub: 0.5,
-        pin: true,
-        pinSpacing: true,
-      },
-    });
+    if (window.innerWidth > 768) {
+      gsap.set("#about-title", { opacity: 0, scale: 0.8 });
 
-    clipAnimation.to(".mask-clip-path", {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: 0,
-    });
+      const clipAnimation = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#clip",
+          start: "center center",
+          end: "+=800 center",
+          scrub: 0.5,
+          pin: true,
+          pinSpacing: true,
+        },
+      });
+
+      clipAnimation.to(".mask-clip-path", {
+        width: "100vw",
+        height: "100vh",
+        borderRadius: 0,
+      });
+
+      clipAnimation.to(
+        "#about-title",
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      );
+    }
   });
 
   return (
@@ -46,18 +59,35 @@ const About = () => {
         <div className="about-subtext">
           <p>Turning ideas into code, and code into impact.</p>
           <p className="text-gray-500">
-            Coding the future, one line at a time - Innovating with ideas,
-            analyzing with data. Dreaming with ambition, my final Evolution.
+            Coding the future, one line at a time - Innovating with Idea and
+            Analyzing with Data. Dreaming with ambition.
           </p>
         </div>
       </div>
 
-      <div className="h-dvh w-screen" id="clip">
+      <div className="hidden md:block h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
           <img
             src="img/arcane.png"
             alt="Background"
-            className="absolute left-0 top-0 size-full object-cover"
+            className="absolute left-0 top-0 size-full object-cover z-10"
+          />
+          <h1
+            id="about-title"
+            className="lg:mt-[14rem] mt-0 absolute special-font font-zentry text-9xl text-blue-100 text-center left-1/2 top-1/2 z-20 translate-x-[-50%] translate-y-[-50%]"
+          >
+            Redefined
+            <br /> <b>Evolution</b>
+          </h1>
+        </div>
+      </div>
+
+      <div className="md:hidden h-full w-screen" id="clip">
+        <div className="flex items-center justify-center mx-4 h-[60vh]">
+          <img
+            src="img/arcane.png"
+            alt="Background"
+            className="h-full object-cover rounded-xl"
           />
         </div>
       </div>
