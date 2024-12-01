@@ -2,6 +2,9 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { TiLocationArrow } from "react-icons/ti";
+import Button from "./Button";
+import AnimatedTitle from "./AnimatedTitle";
 
 const About = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -51,7 +54,7 @@ const About = () => {
           className="mt-5 !text-black text-center"
         /> */}
 
-        <h1 className="mt-5 text-center text-5xl leading-[1.5] md:text-[6rem]">
+        <h1 className="mt-5 text-center text-7xl uppercase leading-[1.0] md:text-[6rem]">
           Welcome to my <br />
           World of Magic
         </h1>
@@ -66,7 +69,7 @@ const About = () => {
       </div>
 
       <div className="hidden md:block h-dvh w-screen" id="clip">
-        <div className="mask-clip-path about-image">
+        <div className="mask-clip-path about-image ">
           <img
             src="img/arcane.png"
             alt="Background"
@@ -74,11 +77,18 @@ const About = () => {
           />
           <h1
             id="about-title"
-            className="lg:mt-[14rem] mt-0 absolute special-font font-zentry text-9xl text-blue-100 text-center left-1/2 top-1/2 z-20 translate-x-[-50%] translate-y-[-50%]"
+            className="lg:mt-[14rem] hover:cursor-pointer mt-0 absolute special-font font-zentry text-9xl text-blue-100 text-center left-1/2 top-1/2 z-20 translate-x-[-50%] translate-y-[-25%]"
           >
-            Redefined
+            My Final
             <br /> <b>Evolution</b>
           </h1>
+
+          <Button
+            id="watch-trailer"
+            title="seek my knowledge"
+            leftIcon={<TiLocationArrow />}
+            containerClass="!bg-yellow-300 flex-center gap-1 rounded-none text-2xl font-bold text-black"
+          />
         </div>
       </div>
 
