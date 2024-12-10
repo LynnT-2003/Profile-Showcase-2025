@@ -77,7 +77,7 @@ const About = () => {
           />
           <h1
             id="about-title"
-            className="lg:mt-[14rem] hover:cursor-pointer mt-0 absolute special-font font-zentry text-9xl text-blue-100 text-center left-1/2 top-1/2 z-20 translate-x-[-50%] translate-y-[-25%]"
+            className="lg:mt-[14rem] hover:cursor-pointer mt-0 absolute special-font font-zentry text-9xl text-blue-100 text-center left-1/2 top-1/2 z-20 translate-x-[-50%] translate-y-[-55%] xl:translate-y-[-25%]"
             onClick={() =>
               window.open("https://lynn-thit-2025.vercel.app/", "_blank")
             }

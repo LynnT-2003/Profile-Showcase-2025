@@ -8,7 +8,8 @@ export default function Home() {
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <HeroSection />
       <About />
-      {/* <Story /> */}
+      <div className="h-screen bg-black"></div>
+      <Story />
     </main>
   );
 }
