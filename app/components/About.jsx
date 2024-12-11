@@ -4,7 +4,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { TiLocationArrow } from "react-icons/ti";
 import Button from "./Button";
-import AnimatedTitle from "./AnimatedTitle";
+import dynamic from "next/dynamic";
+const IconCloud = dynamic(() => import("./icon-cloud"), { ssr: false });
 
 const About = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -42,6 +43,32 @@ const About = () => {
     }
   });
 
+  const slugs = [
+    "typescript",
+    "javascript",
+    "java",
+    "react",
+    "flutter",
+    "android",
+    "html5",
+    "css3",
+    "nodedotjs",
+    "express",
+    "nextdotjs",
+    "prisma",
+    "amazonaws",
+    "postgresql",
+    "firebase",
+    "vercel",
+    "git",
+    "jira",
+    "github",
+    "gitlab",
+    "visualstudiocode",
+    "androidstudio",
+    "figma",
+  ];
+
   return (
     <div id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
@@ -75,16 +102,15 @@ const About = () => {
             alt="Background"
             className="absolute left-0 top-0 size-full object-cover z-10"
           />
-          <h1
+          <div
             id="about-title"
-            className="lg:mt-[14rem] hover:cursor-pointer mt-0 absolute special-font font-zentry text-9xl text-blue-100 text-center left-1/2 top-1/2 z-20 translate-x-[-50%] translate-y-[-55%] xl:translate-y-[-25%]"
+            className="absolute left-0 top-0 size-full flex-center z-20 text-white text-4xl font-bold"
             onClick={() =>
               window.open("https://lynn-thit-2025.vercel.app/", "_blank")
             }
           >
-            My Final
-            <br /> <b>Evolution</b>
-          </h1>
+            <IconCloud iconSlugs={slugs} />
+          </div>
 
           <Button
             id="watch-trailer"

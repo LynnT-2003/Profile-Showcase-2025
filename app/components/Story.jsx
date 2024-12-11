@@ -175,7 +175,7 @@ const FloatingImage = () => {
 
   return (
     <div id="story" className="min-h-dvh w-screen bg-black text-blue-50">
-      <div className="flex size-full flex-col items-center py-10 pb-24">
+      <div className="flex size-full flex-col items-center py-0 pb-24">
         <p className="font-general text-sm uppercase md:text-[10px]">
           the multiversal ip world
         </p>
@@ -191,7 +191,7 @@ const FloatingImage = () => {
             <br /> <b>minds of tomorrow</b>
           </h1>
 
-          <div className="story-img-container">
+          <div className="story-img-container bg-black">
             <div className="story-img-mask">
               <div className="story-img-content">
                 <img
@@ -236,7 +236,7 @@ const FloatingImage = () => {
           </div>
         </div>
 
-        <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
+        <div className="relative -mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
               I build the bridge between AI and our reality, <br /> bringing all
